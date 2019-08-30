@@ -1,4 +1,4 @@
-#VBoxManage
+# VBoxManage
 
 $ cd '\Program Files\Oracle\VirtualBox'
 $ .\VBoxManage.exe
@@ -15,12 +15,12 @@ VBoxManage modifyvm test_1 --name teste2
 VBoxManage modifyvm "Ubuntu" --groups "/TestGroup"
 
 
-# Start VM in headless mode
+## Start VM in headless mode
 VBoxManage startvm MyVM 
 VBoxManage startvm MyVM --type headless
 VBoxManage startvm MyVM --type gui
 
-# Power off VM
+## Power off VM
 VBoxManage controlvm MyVM poweroff
 pause|resume|reset|poweroff|savestate|acpipowerbutton|acpisleepbutton
 
@@ -35,15 +35,15 @@ VBoxManage list -l vms | awk '/^Groups:/ { groups = $2; } /^UUID:/ { uuid = $2; 
 VBoxManage modifyvdi "D:\Users\luis\VirtualBox VMs\Ubuntu Zabbix Grafana\Appliance-disk002.vdi" compact
 ```
 
-#  Increase Virtual Disk Size
-## Increase the size of fixed sized disk in Virtualbox
+##  Increase Virtual Disk Size
+### Increase the size of fixed sized disk in Virtualbox
  - https://www.youtube.com/watch?v=ikSIDI535L0
 ```bash
 sudo dd if=/dev/sba of=/dev/sdb
 
 df -kh
 ```
-## Increase virtual machine disk size corrections and windows fix
+### Increase virtual machine disk size corrections and windows fix
  - https://www.youtube.com/watch?v=-eMq4KtlYUg
 
 ```bash
@@ -55,20 +55,20 @@ sudo vim /etc/fstab
 ```
 - https://www.youtube.com/watch?v=r_UyKufXR3c
 
-# Virtual Box : How to Increase Disk Size - Windows
+## Virtual Box : How to Increase Disk Size - Windows
 - https://www.youtube.com/watch?v=7Aqx-VHv2_k
 - https://www.youtube.com/watch?v=Ujd72kRMfFM 
 
-# In VirtualBox
-## Increase Virtual Disk Size (VMDK)
-### clone VMDK to VDI
+## In VirtualBox
+### Increase Virtual Disk Size (VMDK)
+#### clone VMDK to VDI
 VBoxManage clonehd "D:\Users\luis\VirtualBox VMs\Ubuntu Zabbix Grafana\Appliance-disk002.vmdk" "D:\Users\luis\VirtualBox VMs\Ubuntu Zabbix Grafana\Appliance-disk002.vdi" --format vdi
-### resize the VDI
+#### resize the VDI
 VBoxManage modifymedium "D:\Users\luis\VirtualBox VMs\Ubuntu Zabbix Grafana\Appliance-disk002.vdi" --resize 16384
-### clone VDI to VMDK 
+#### clone VDI to VMDK 
 VBoxManage clonehd "D:\Users\luis\VirtualBox VMs\Ubuntu Zabbix Grafana\Appliance-disk002.vdi" "D:\Users\luis\VirtualBox VMs\Ubuntu Zabbix Grafana\Appliance-disk002.vmdk"  --format vmdk
 
-### Manually installing VBoxGuestAdditions [windows guest]
+#### Manually installing VBoxGuestAdditions [windows guest]
 [host] # vboxmanage guestcontrol updateadditions "<vbox_name>" --source /usr/share/virtualbox/VBoxGuestAdditions.iso --verbose
 
 
@@ -80,7 +80,7 @@ https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtu
 https://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
 
 
-### Set the Path of Virtual Machine - https://devopsmates.com/oracle-virtual-box-installation-on-rhelcentos-7/
+#### Set the Path of Virtual Machine - https://devopsmates.com/oracle-virtual-box-installation-on-rhelcentos-7/
 
 Validate the Installation
 
