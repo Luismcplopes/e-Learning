@@ -1,2 +1,5 @@
-# e-Learning
-Cheat sheets form learning some new tech and app
+# Some personal notation form learning some new tech and app.
+
+
+
+
