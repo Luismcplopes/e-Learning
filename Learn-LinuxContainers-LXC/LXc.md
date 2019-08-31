@@ -1,24 +1,3 @@
-# more info
-https://blog.simos.info/how-to-make-your-lxd-container-get-ip-addresses-from-your-lan/
-https://blog.simos.info/how-to-make-your-lxd-containers-get-ip-addresses-from-your-lan-using-a-bridge/
-
-Here is the iptables command. Set three parameters, and then change the $PORT to each port that needs to be opened.
-`PORT=80 SERVER_IP=your_server_ip CONTAINER_IP=your_container_ip INTERFACE=your_server_network_interface sudo -E bash -c 'iptables -t nat -I PREROUTING -i $INTERFACE -p TCP -d $SERVER_IP --dport $PORT -j DNAT --to-destination $CONTAINER_IP:$PORT -m comment --comment "forward to network port"'`
-
-Replace
-
-PORT: the network port. In the example it shows port 80 (www).
-SERVER_IP: the server’s IP address.
-CONTAINER_IP: the container’s IP address (use lxc list to find it).
-INTERFACE: the server network interface. Probably eth0 or something similar.
-
-exemplos:
-`PORT=8080 PROTO=tcp SERVER_IP=your_server_ip CONTAINER_IP=your_container_ip INTERFACE=your_server_network_interface sudo -E bash -c 'iptables -t nat -I PREROUTING -i $INTERFACE -p $PROTO -d $SERVER_IP --dport $PORT -j DNAT --to-destination $CONTAINER_IP:$PORT -m comment --comment "forward to Kodi network port 8080 TCP"' `
-
-`PORT=9777 PROTO=udp SERVER_IP=your_server_ip CONTAINER_IP=your_container_ip INTERFACE=your_server_network_interface sudo -E bash -c 'iptables -t nat -I PREROUTING -i $INTERFACE -p $PROTO -d $SERVER_IP --dport $PORT -j DNAT --to-destination $CONTAINER_IP:$PORT -m comment --comment "forward to Kodi network port 8080 TCP"' `
-
-
-
 
 # LXC -- Linux Containers
 ## Install 
