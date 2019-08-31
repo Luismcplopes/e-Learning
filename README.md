@@ -6,3 +6,8 @@
  * [Learn-Ngrok](https://github.com/Luismcplopes/e-Learning/blob/master/Learn-Ngrok/ngrok.md)
  * [Learn-LinuxContainers-LXC](https://github.com/Luismcplopes/e-Learning/blob/master/Learn-LinuxContainers-LXC/LXc.md)
  * [Learn-Nginx](https://github.com/Luismcplopes/e-Learning/blob/master/Learn-Nginx/nginx.md)
+ * [Learn-Vagrant]()
+ * [Learn-Ansible]()
+ * [Learn-Docker]()
+ * [[Learn-TravisCI-cli]()
+ * [Learn-Git]()
